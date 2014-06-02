@@ -1,3 +1,5 @@
+$fn=100;
+
 //horizontal arm
 translate([0,100,0])
 	difference(){
@@ -38,7 +40,7 @@ translate([-35,40,0])
 		cylinder(h = 5,r = 1.25);
 	};
 //camera swivel
-translate([-95,40,0])
+translate([-45,15,0])
 	difference(){
 		union(){
 			translate([-15,-15,0])
@@ -55,14 +57,23 @@ translate([-95,40,0])
 		};
 		translate([0,0,-1])
 			cylinder(h = 5,r = 1.25);
-		translate([5,-12,40.5])
+		translate([5,-11,40.5])
 				rotate([90,0,0])
 					cylinder(h = 5,r = 1.4);	
 	};
 
 //camera attachment
-union(){
-	cube([58,19,3]);
-	translate ([29,0,0])
-		cube([3,19,10]);
-}
+difference(){
+	union(){
+		cube([58,19,3]);
+		translate ([29,0,0])
+			cube([3,19,10]);
+		translate ([29,9.5,10])
+			rotate([0,90,0])
+				cylinder(h = 3,r = 9.5);	
+	
+	};
+	translate ([28,9.5,10])
+			rotate([0,90,0])
+				cylinder(h = 5,r = 1.4);	
+};
