@@ -1,3 +1,4 @@
+//horizontal arm
 translate([0,100,0])
 	difference(){
 		union(){
@@ -13,7 +14,7 @@ translate([0,100,0])
 	translate([50,0,-1])
 		cylinder(h = 5,r = 1.25);
 	};
-
+//bed attachment
 translate([-35,40,0])
 	difference(){
 		union(){
@@ -36,24 +37,32 @@ translate([-35,40,0])
 		rotate([0,90,0])
 		cylinder(h = 5,r = 1.25);
 	};
-
-difference(){
-	union(){
-		translate([-15,-15,0])
-			cube([15,30,3]);
-		translate([-15,-15,0])
-			cube([3,30,50]);
-		cylinder(h = 3,r = 15);	
-		translate([15,-12,45])
-			rotate([90,0,0])
-				cylinder(h = 3,r = 5);	
-		translate([-15,-15,40])
-			cube([30,3,10]);
-
+//camera swivel
+translate([-95,40,0])
+	difference(){
+		union(){
+			translate([-15,-15,0])
+				cube([15,30,3]);
+			translate([-15,-15,0])
+				cube([3,30,50]);
+			cylinder(h = 3,r = 15);	
+			translate([5,-12,40.5])
+				rotate([90,0,0])
+					cylinder(h = 3,r = 9.5);	
+			translate([-15,-15,31])
+				cube([20,3,19]);
+	
+		};
+		translate([0,0,-1])
+			cylinder(h = 5,r = 1.25);
+		translate([5,-12,40.5])
+				rotate([90,0,0])
+					cylinder(h = 5,r = 1.4);	
 	};
-	translate([0,0,-1])
-		cylinder(h = 5,r = 1.25);
-	translate([15,-12,45])
-			rotate([90,0,0])
-				cylinder(h = 5,r = 1.4);	
-};
+
+//camera attachment
+union(){
+	cube([58,19,3]);
+	translate ([29,0,0])
+		cube([3,19,10]);
+}
