@@ -25,7 +25,7 @@ pillarsize = 20;
 // deleting openscad design from original to see accuracy
 difference(){
 // original model
-import("/Users/ws/Downloads/neck-2_2.stl");
+//import("/Users/ws/Downloads/neck-2_2.stl");
 //openscad designed part
 	union(){
 		intersection(){
