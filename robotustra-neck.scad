@@ -19,7 +19,7 @@ translate([q/2,q/-2,q/2])
 
 
 
-//$fn=200;
+$fn=100;
 socketsize = 9.5;
 pillarsize = 20;
 // deleting openscad design from original to see accuracy
